@@ -1,0 +1,31 @@
+public class EnigmaChatbot {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input;
+
+        System.out.println("--- Assistente Bletchley Park ---");
+        System.out.println("Olá! Eu sou o lucasBot. Sobre o que quer falar? (historia, java, ,Religião,ajuda, sair)");
+
+        while (true) {
+            System.out.print("> ");
+            input = scanner.nextLine().toLowerCase().trim();
+
+            if (input.equals("sair")) {
+                System.out.println("Encerrando......obrigado!");
+                break;
+            }
+
+            
+            String resposta = switch (input) {
+                case "historia" -> "Eu sou Lucas pessoni e cresci em goiania.";
+                case "java" -> " Essa linguagem não é tão dificil .";
+                case "Religião" -> "Sou evangelico.";
+                case "ajuda" -> "Tente: 'historia', 'java' ou 'Religião'.";
+                default -> "Desculpe, essa mensagem está criptografada para mim. Pode repetir?";
+            };
+
+            System.out.println(resposta);
+        }
+        scanner.close();
+    }
+}
